@@ -1,0 +1,16 @@
+# backend
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+
+# frontend
+node_modules/
+dist/
+
+# secrets
+.env
+
+# os / editor
+.DS_Store
+.vscode/
