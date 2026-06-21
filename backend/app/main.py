@@ -3,13 +3,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine, Base
 from app.models import product, customer, order
 from app.routers import products, customers, orders, dashboard
+from app.config import settings
 
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Inventory & Order Management System")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["settings.frontend_url"],
+    allow_origins=[settings.frontend_url],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
